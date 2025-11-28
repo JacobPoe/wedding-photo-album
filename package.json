@@ -1,6 +1,6 @@
 {
-  "name": "wedding-album",
-  "version": "0.0.1",
+  "name": "wedding-photo-album",
+  "version": "0.1.0",
   "description": "React web client for my digital wedding photo album",
   "main": "src/index.js",
   "scripts": {
