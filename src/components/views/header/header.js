@@ -1,25 +1,15 @@
 import React from "react";
-import Checkbox from "../../controls/input/checkbox/checkbox";
+
+import config from "../../../../site.config";
 
 import "./header.css";
 
-const Header = (props) => {
-    const heroText = "Jake & Gabby";
-    const toggleLightModeMsg = "Toggle between light and dark mode.";
+const title = config.text.home.header.title;
 
+const Header = (props) => {
     return (
-        <div className={`header header__${props.theme}`}>
-            <h1>{heroText}</h1>
-            <div className={`row-right header__theme-toggle`}>
-                <Checkbox
-                    id={"toggle-theme"}
-                    alignment={"right"}
-                    type={"toggle-theme"}
-                    checked={props.checked}
-                    onChangeHandler={props.toggleTheme}
-                    label={toggleLightModeMsg}
-                />
-            </div>
+        <div className={`header`}>
+            <h1>{title}</h1>
         </div>
         )
     };

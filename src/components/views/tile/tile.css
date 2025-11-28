@@ -1,0 +1,10 @@
+.tile {
+    display: inline-block;
+    max-width: 20vw;
+    margin: var(--space-6);
+    border-radius: var(--radius-md);
+}
+
+.tile:hover {
+    cursor: pointer;
+}

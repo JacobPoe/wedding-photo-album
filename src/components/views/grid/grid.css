@@ -1,0 +1,7 @@
+.grid {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: var(--space-2) var(--space-6);
+}
