@@ -1,18 +1,22 @@
 import React from "react";
+import { connect } from "react-redux";
+
+import { setActiveImage } from "../../../state/actions/active-image";
 
 import './tile.css';
 
-const maximizeImage = (id) => {
-    // open an image with ID props.id in a modal to view full-sized
-    alert(`todo: open modal for fullsize image\nid: ${id}`);
-}
-
 const Tile = (props) => {
+    const maximizeImage = () => {
+        props.dispatch(setActiveImage({id: props.id, url: props.url, alt: props.alt}));
+    }
+
     return (
         <>
-            <img id={props.id} className={`tile tile__${props.id}`} src={props.url} alt={props.alt} onClick={() => maximizeImage(props.id)} />
+            <img id={props.id} className={`tile tile__${props.id}`} src={props.url} alt={props.alt} onClick={() => maximizeImage()} />
         </>
     );
 };
 
-export default Tile;
+export default connect((state) => ({
+    activeImage: state.activeImage
+}))(Tile);
