@@ -7,8 +7,6 @@
 
 .view .view-container {
     padding: var(--space-8) var(--space-4) calc(120px + var(--space-8));
-    width: min(1100px, 92vw);
-    margin-inline: auto;
 }
 
 .view__home .view-container {

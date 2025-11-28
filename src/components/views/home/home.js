@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "../views-base.css";
 import "./home.css";
 
+import config from "../../../../site.config";
+
+import Grid from "../grid/grid";
 import Header from "../header/header";
 
+// TODO: Request from home media server using HTTP Service
+const testImages = config.images;
+const toast = config.text.home.toast;
+
 const Home = () => {
-    const [lightMode, setLightMode] = useState(false);
-    const toggleTheme = () => setLightMode(!lightMode);
 
     return (
-        <>
-            <Header checked={lightMode} theme={lightMode ? "light-mode" : "dark-mode"} toggleTheme={toggleTheme} />
-            <div className={`view view__home ${lightMode ? "light-mode" : "dark-mode"}`}>
+        <div className="dark-mode">
+            <Header />
+            <div className={`view view__home`}>
                 <div className={"view-container"}>
-                    shit goes here
+                    {/* stretch goal: design a carousel to live above the toast */}
+                    <p className="toast">{toast}</p>
+                    <Grid images={testImages} />
                 </div>
             </div>
-        </>
+            {/* TODO: make a real footer */}
+            <hr />
+            <span>📷: <a href="https://harryacosta.com/columbus-ohio-photography" target="_blank">Harry Acosta Photography</a></span>
+        </div>
     )
 }
 

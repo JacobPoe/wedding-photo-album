@@ -1,23 +1,3 @@
-/* ==========================================================================
-   Theme palettes (explicit light/dark via [data-theme]); supports Sass nesting later
-   ========================================================================== */
-:root { color-scheme: light dark; }
-
-/* Light theme (default) */
-:root,
-.view[data-theme="light"],
-:root[data-theme="light"] {
-  --bg: #f6f7fb;
-  --bg-elev: rgba(255,255,255,.7);
-  --glass: rgba(255,255,255,.6);
-  --fg: #0e1116;
-  --muted: rgba(14,17,22,.65);
-  --accent: #0ea5e9;
-  --accent-contrast: #ffffff;
-  --border: rgba(0,0,0,.08);
-  --ring: rgba(14,165,233,.35);
-}
-
 /* Dark theme */
 .view[data-theme="dark"],
 :root[data-theme="dark"],
@@ -78,19 +58,6 @@
   --ring: rgba(14,165,233,.45);
 }
 
-.light-mode {
-  --bg: #f6f7fb;
-  --bg-elev: rgba(255,255,255,.7);
-  --glass: rgba(255,255,255,.6);
-  --fg: #0e1116;
-  --muted: rgba(14,17,22,.65);
-  --accent: #0ea5e9;
-  --accent-contrast: #ffffff;
-  --border: rgba(0,0,0,.08);
-  --ring: rgba(14,165,233,.35);
-  color-scheme: light;
-}
-
 .dark-mode {
   --bg: #0b0c0f;
   --bg-elev: rgba(255,255,255,.06);
@@ -143,31 +110,11 @@ input:focus { color: var(--fg)}
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, rgba(255,255,255,.25), rgba(0,0,0,.25));
   border-radius: 999px;
-  border: 3px solid transparent;
+  border: 3px solid var(--border);
   background-clip: padding-box;
 }
 *::-webkit-scrollbar-track { background: transparent; }
 
-/* Containers / Utilities */
-.container { width: min(1200px, 92vw); margin-inline: auto; }
-
-.surface {
-  background: var(--bg-elev);
-  backdrop-filter: blur(16px) saturate(120%);
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-.glass-panel {
-  background: var(--glass);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-}
 
 .inline-muted { color: var(--muted); }
 .hidden { display: none !important; }
@@ -222,20 +169,11 @@ input:focus { color: var(--fg)}
   color: var(--accent-contrast);
   border-color: color-mix(in oklab, var(--accent) 60%, black);
 }
-.btn--ghost { background: transparent; }
-.btn--icon { padding: .6rem; width: 42px; height: 42px; border-radius: 999px; }
-.btn--block { width: 100%; }
 
 /* Layout helpers */
-.stack { display: flex; flex-direction: column; gap: var(--space-4); }
 .row { display: flex; align-items: center; gap: var(--space-4); }
 .row-right { display: flex; align-items: center; gap: var(--space-4); margin-left: auto; }
 .space-between { justify-content: space-between; }
-
-/* Z-layers */
-.z-header { z-index: 50; }
-.z-prompt { z-index: 40; }
-.z-content { z-index: 10; }
 
 h1,
 h2,
