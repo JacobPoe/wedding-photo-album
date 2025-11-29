@@ -12,7 +12,7 @@ const Tile = (props) => {
 
     return (
         <>
-            <img id={props.id} className={`tile tile__${props.id}`} src={props.url} alt={props.alt} onClick={() => maximizeImage()} />
+            <img id={props.id} tabIndex={props.tabIndex} className={`tile tile__${props.id}`} src={props.url} alt={props.alt} onClick={() => maximizeImage()} />
         </>
     );
 };

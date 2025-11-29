@@ -5,6 +5,26 @@
     text-transform: uppercase;
 }
 
+.btn[type="close"] {
+    gap: 0;
+    padding: 0.25rem;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    color: var(--bg);
+
+    font-weight: 700;
+    border-width: 2px;
+    border-color: var(--bg);
+    border-radius: var(--radius-sm);
+    right: 0;
+    top: 0;
+    transform: translate(-100%, 100%);
+}
+.btn[type="close"]::after {
+    content: "x"
+}
+
 .btn--danger {
     background: linear-gradient(180deg, #ef4444, color-mix(in oklab, #ef4444 85%, black));
     border-color: color-mix(in oklab, #ef4444 60%, black);
