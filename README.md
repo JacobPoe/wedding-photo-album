@@ -8,6 +8,7 @@ Software:
 
 Environment Variables:
 - `ASSET_PATH`: Where on disk the folder of assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
+- `PORT`: Port the Express server should run on. Defaults to `3000`.
 
 Special Thanks: 
 - [Harry Acosta Photography](https://harryacosta.com/columbus-ohio-photography) for capturing our day
