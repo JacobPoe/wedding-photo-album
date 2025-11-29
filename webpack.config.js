@@ -3,6 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const ASSET_PATH = process.env.ASSET_PATH || path.join(__dirname, 'assets');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -44,6 +46,10 @@ module.exports = {
         directory: path.join(__dirname, 'public'),
         publicPath: '/',
         watch: true
+      },
+      {
+        directory: ASSET_PATH,
+        publicPath: '/assets'
       }
     ],
     compress: true,
