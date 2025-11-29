@@ -1,6 +1,6 @@
 .grid {
     display: flex;
-    margin: 0 auto;
+    justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
     padding: var(--space-2) var(--space-6);
