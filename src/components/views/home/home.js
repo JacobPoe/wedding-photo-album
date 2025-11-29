@@ -6,9 +6,9 @@ import "./home.css";
 
 import config from "../../../../site.config";
 
-import Grid from "../grid/grid";
+import Grid from "../../layout/grid/grid";
 import Header from "../header/header";
-import Modal from "../modal/modal";
+import Modal from "../../layout/modal/modal";
 
 // TODO: Request from home media server using HTTP Service
 const testImages = config.images;
