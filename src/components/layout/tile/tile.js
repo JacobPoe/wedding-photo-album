@@ -1,18 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { setActiveImage } from "../../../state/actions/active-image";
+import { setActiveImage } from "../../../state/actions/set-active-image";
 
 import './tile.css';
 
 const Tile = (props) => {
     const maximizeImage = () => {
-        props.dispatch(setActiveImage({id: props.id, url: props.url, alt: props.alt}));
+        props.dispatch(setActiveImage({id: props.id, url: props.url}));
     }
 
     return (
         <>
-            <img id={props.id} tabIndex={props.tabIndex} className={`tile tile__${props.id}`} src={props.url} alt={props.alt} onClick={() => maximizeImage()} />
+            <img id={props.id} tabIndex={props.tabIndex} className={`tile`} src={props.url} onClick={() => maximizeImage()} />
         </>
     );
 };
