@@ -10,12 +10,9 @@ import Grid from "../../layout/grid/grid";
 import Header from "../header/header";
 import Modal from "../../layout/modal/modal";
 
-// TODO: Request from home media server using HTTP Service
-const testImages = config.images;
 const toast = config.text.home.toast;
 
 const Home = (props) => {
-    console.log(props)
     return (
         <>
             <div className="dark-mode">
@@ -24,7 +21,7 @@ const Home = (props) => {
                     <div className={"view-container"}>
                         {/* stretch goal: design a carousel to live above the toast */}
                         <p className="toast">{toast}</p>
-                        <Grid images={testImages} />
+                        <Grid />
                     </div>
                 </div>
                 {/* TODO: make a real footer */}

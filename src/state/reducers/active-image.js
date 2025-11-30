@@ -1,4 +1,4 @@
-import { SET_ACTIVE_IMAGE } from "../actions/active-image";
+import { SET_ACTIVE_IMAGE } from "../actions/set-active-image";
 
 export const activeImage = (state = null, action) => {
     switch (action.type) {

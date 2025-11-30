@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { setActiveImage } from "../../../state/actions/active-image";
+import { setActiveImage } from "../../../state/actions/set-active-image";
 import Button from "../../controls/button/button";
 
 import './modal.css';
