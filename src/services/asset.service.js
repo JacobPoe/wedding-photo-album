@@ -3,6 +3,17 @@ const loadAssets = async (offset, limit = 100) => {
     return response.json(); // { total, offset, limit, files }
 }
 
+const loadDirectories = async () => {
+    const response = await fetch(`/api/directories`);
+    return response.json();
+}
+
+const buildTabMeta = (directories) => {
+    return directories.map((dir) => {
+        return dir.replace(/_-/g, ' ');
+    })
+}
+
 const buildTileMeta = (files) => {
     return files.map((filename, index) => {
         return {
@@ -12,4 +23,4 @@ const buildTileMeta = (files) => {
     })
 }
 
-export { buildTileMeta, loadAssets };
+export { buildTabMeta, buildTileMeta, loadAssets, loadDirectories };

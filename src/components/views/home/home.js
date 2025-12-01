@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import "../views-base.css";
 import "./home.css";
 
 import config from "../../../../site.config";
+import { buildTabMeta, loadDirectories } from "../../../services/asset.service";
 
 import Grid from "../../layout/grid/grid";
 import Header from "../header/header";
@@ -13,6 +14,16 @@ import Modal from "../../layout/modal/modal";
 const toast = config.text.home.toast;
 
 const Home = (props) => {
+    const [tabs, setTabs] = useState([]);
+    const loadTabs = async () => {
+        const directories = await loadDirectories();
+
+        const tabsMeta = buildTabMeta(directories);
+        setTabs(tabsMeta);
+    }
+    useEffect(() => {
+      loadTabs();
+    }, [])
     return (
         <>
             <div className="dark-mode">
@@ -21,7 +32,14 @@ const Home = (props) => {
                     <div className={"view-container"}>
                         {/* stretch goal: design a carousel to live above the toast */}
                         <p className="toast">{toast}</p>
-                        <Grid />
+                        { tabs.length && (
+                            tabs.map((tab, index) =>
+                                {
+                                    /* TODO: make a <Tab /> component which renders a <Grid /> */
+                                    console.log(tab)
+                                }
+                            )
+                        )}
                     </div>
                 </div>
                 {/* TODO: make a real footer */}
