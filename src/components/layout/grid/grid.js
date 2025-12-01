@@ -9,7 +9,7 @@ import './grid.css';
 const Grid = () => {
     const [tiles, setTiles] = useState([]);
     const loadImages = async () => {
-        const assets = await loadAssets(0, 25);
+        const assets = await loadAssets(0);
 
         const tilesMeta = buildTileMeta(assets.files);
         setTiles(tilesMeta);
@@ -17,7 +17,7 @@ const Grid = () => {
 
     useEffect(() => {
         loadImages();
-    }, [tiles])
+    }, [])
 
     return (
         <div className="grid" id="grid">
