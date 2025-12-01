@@ -12,44 +12,7 @@ const config = {
       },
       "toast": "Thank you to everyone who joined us on our special day! We're grateful for all your love and support as we begin this new chapter."
     }
-  },
-  "images": [
-    {
-      "id": "_0",
-      "url": "/test_images/GabbyJake_Wedding_HA_R2945.JPG",
-      "alt": "zero"
-    },
-    {
-      "id": "_1",
-      "url": "/test_images/GabbyJake_Wedding_HA_R3044.JPG",
-      "alt": "one"
-    },
-    {
-      "id": "_2",
-      "url": "/test_images/GabbyJake_Wedding_HA_R3370.JPG",
-      "alt": "two"
-    },
-    {
-      "id": "_3",
-      "url": "/test_images/GabbyJake_Wedding_HAP_0109.JPG",
-      "alt": "three"
-    },
-    {
-      "id": "_4",
-      "url": "/test_images/GabbyJake_Wedding_HAP_1638.JPG",
-      "alt": "four"
-    },
-    {
-      "id": "_5",
-      "url": "/test_images/GabbyJake_Wedding_HAP_1826.JPG",
-      "alt": "five"
-    },
-    {
-      "id": "_6",
-      "url": "/test_images/GabbyJake_Wedding_HAP_1950.JPG",
-      "alt": "six"
-    },
-  ]
+  }
 }
 
 export default config;
