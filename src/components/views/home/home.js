@@ -37,12 +37,12 @@ const Home = (props) => {
                         { tabs.length && (
                             tabs.map((tab, index) =>
                                 {
-                                    return (<Tab category={tab} key={index} />);
+                                    return (<Tab category={tab} index={index} key={index} />);
                                 }
                             )
                         )}
                         <hr />
-                        { props?.activeTab === props.tabIndex && (
+                        { props.activeTab === props.tabIndex && (
                             <Grid category={props.category} />
                         )}
                     </div>

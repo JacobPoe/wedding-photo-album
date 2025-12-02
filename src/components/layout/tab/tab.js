@@ -6,7 +6,7 @@ import Button from "../../controls/button/button";
 
 const Tab = (props) => {
     const changeTab = () => {
-        props.dispatch(setActiveTab(props.key))
+        props.dispatch(setActiveTab(props.index))
     }
 
     return (
