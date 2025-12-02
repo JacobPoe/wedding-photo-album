@@ -15,7 +15,7 @@ const loadDirectories = async () => {
 
 const buildTabMeta = (directories) => {
     return directories.map((dir) => {
-        return dir.replace(/_-/g, ' ');
+        return dir.replace(/[_-]/g, ' ');
     })
 }
 
