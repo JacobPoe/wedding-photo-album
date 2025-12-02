@@ -7,9 +7,10 @@ import "./home.css";
 import config from "../../../../site.config";
 import { buildTabMeta, loadDirectories } from "../../../services/asset.service";
 
-import Grid from "../../layout/grid/grid";
 import Header from "../header/header";
 import Modal from "../../layout/modal/modal";
+import Tab from "../../layout/tab/tab";
+import Grid from "../../layout/grid/grid";
 
 const toast = config.text.home.toast;
 
@@ -23,7 +24,8 @@ const Home = (props) => {
     }
     useEffect(() => {
       loadTabs();
-    }, [])
+    }, []);
+
     return (
         <>
             <div className="dark-mode">
@@ -35,10 +37,13 @@ const Home = (props) => {
                         { tabs.length && (
                             tabs.map((tab, index) =>
                                 {
-                                    /* TODO: make a <Tab /> component which renders a <Grid /> */
-                                    console.log(tab)
+                                    return (<Tab category={tab} key={index} />);
                                 }
                             )
+                        )}
+                        <hr />
+                        { props?.activeTab === props.tabIndex && (
+                            <Grid category={props.category} />
                         )}
                     </div>
                 </div>
@@ -54,5 +59,6 @@ const Home = (props) => {
 }
 
 export default connect((state) => ({
-    activeImage: state.activeImage
+    activeImage: state.activeImage,
+    activeTab: state.activeTab
 }))(Home);
