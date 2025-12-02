@@ -1,7 +1,7 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
-import {setActiveTab} from "../../../state/actions/set-active-tab";
+import { setActiveTab } from "../../../state/actions/set-active-tab";
 import Button from "../../controls/button/button";
 
 const Tab = (props) => {
@@ -10,7 +10,7 @@ const Tab = (props) => {
     }
 
     return (
-        <Button type="tab" text={props.category} onClickHandler={changeTab} />
+        <Button type="tab" text={props.category} className={props.index === props.activeTab ? ['active'] : []} onClickHandler={changeTab} />
     )
 }
 

@@ -25,6 +25,26 @@
     content: "x"
 }
 
+.btn[type="tab"] {
+    background-color: transparent;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    border: 1px solid var(--border);
+
+    margin-bottom: -8px;
+}
+.btn[type="tab"].active {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+}
+.btn[type="tab"]:not(:first-of-type) {
+    margin-left: var(--space-2);
+}
+.btn[type="tab"]:hover {
+    border: 1px solid var(--accent);
+    background-color: transparent;
+}
+
+
 .btn--danger {
     background: linear-gradient(180deg, #ef4444, color-mix(in oklab, #ef4444 85%, black));
     border-color: color-mix(in oklab, #ef4444 60%, black);
