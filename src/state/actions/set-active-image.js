@@ -1,4 +1,4 @@
-export const SET_ACTIVE_IMAGE = 'SET_ACTIVE_IMAGE'
+import { SET_ACTIVE_IMAGE } from "../reducers/album";
 
 export function setActiveImage(activeImage) {
     return {

@@ -3,7 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const ASSET_PATH = process.env.ASSET_PATH || path.join(__dirname, 'assets');
+const ASSET_PATH_COMPRESSED = process.env.ASSET_PATH_COMPRESSED || path.join(__dirname, 'assets');
+const ASSET_PATH_FULLSIZE = process.env.ASSET_PATH_FULLSIZE || path.join(__dirname, 'assets');
 
 module.exports = {
   entry: './src/index.js',
@@ -48,8 +49,12 @@ module.exports = {
         watch: true
       },
       {
-        directory: ASSET_PATH,
-        publicPath: '/assets'
+        directory: ASSET_PATH_COMPRESSED,
+        publicPath: '/assets/compressed'
+      },
+      {
+        directory: ASSET_PATH_FULLSIZE,
+        publicPath: '/assets/fullsize',
       }
     ],
     compress: true,

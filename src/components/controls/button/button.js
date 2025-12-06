@@ -3,6 +3,12 @@ import React from "react";
 import "./button.css";
 
 const Button = (props) => {
+    const classes = ["btn"];
+    if (props.className?.length) {
+        props.className.forEach((className) => {
+            classes.push(className);
+        })
+    }
     return (
         <>
             {props.label && (
@@ -13,7 +19,7 @@ const Button = (props) => {
             <button
                 id={"button__" + props.id}
                 onClick={props.onClickHandler}
-                className="btn"
+                className={classes.join(" ")}
                 type={props.type ? props.type : 'button'}
                 >
                 <span>{props.text}</span>

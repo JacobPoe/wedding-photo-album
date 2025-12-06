@@ -7,7 +7,8 @@ Software:
 - Framework: ReactJS
 
 Environment Variables:
-- `ASSET_PATH`: Where on disk the folder of assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
+- `ASSET_PATH_FULLSIZE`: Where on disk the folder of fullsize assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
+- `ASSET_PATH_COMPRESSED`: Where on disk the folder of compressed assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
 - `PORT`: Port the Express server should run on. Defaults to `3000`.
 
 Special Thanks: 

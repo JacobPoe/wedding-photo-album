@@ -1,18 +1,16 @@
 import './style.css';
+import Home from "./components/views/home/home";
 
 import React from "react";
+import { Provider } from "react-redux";
 import { createRoot } from "react-dom/client";
 import { configureStore } from "@reduxjs/toolkit";
 
-import Home from "./components/views/home/home";
-import {activeImage} from "./state/reducers/active-image";
-import {Provider} from "react-redux";
+import { album } from "./state/reducers/album";
 import logger from "./state/middleware/logger";
 
 const store = configureStore({
-    reducer: {
-        activeImage: activeImage,
-    },
+    reducer: { album: album },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })
 

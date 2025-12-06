@@ -7,7 +7,13 @@ import './tile.css';
 
 const Tile = (props) => {
     const maximizeImage = () => {
-        props.dispatch(setActiveImage({id: props.id, url: props.url}));
+        props.dispatch(
+            setActiveImage({
+                id: props.id,
+                name: props.name,
+                url: props.url
+            })
+        );
     }
 
     return (
@@ -17,6 +23,4 @@ const Tile = (props) => {
     );
 };
 
-export default connect((state) => ({
-    activeImage: state.activeImage
-}))(Tile);
+export default connect(() => ({}))(Tile);
