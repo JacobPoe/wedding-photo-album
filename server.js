@@ -48,7 +48,7 @@ app.get('/api/images', async (req, res) => {
         total: imageFiles.length,
         offset,
         limit,
-        files: batch.map(filename => `/images/${filename}`),
+        files: batch.map(filename => filename)
     });
 });
 

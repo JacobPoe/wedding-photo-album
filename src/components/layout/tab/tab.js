@@ -10,7 +10,13 @@ const Tab = (props) => {
     }
 
     return (
-        <Button type="tab" text={props.category} className={props.index === props.activeTab ? ['active'] : []} onClickHandler={changeTab} />
+        <Button
+            type="tab"
+            id={props.category.split(' ').join('')}
+            text={props.category}
+            className={props.index === props.activeTab ? ['active'] : []}
+            onClickHandler={changeTab}
+        />
     )
 }
 

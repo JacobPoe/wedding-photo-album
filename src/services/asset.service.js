@@ -19,11 +19,11 @@ const buildTabMeta = (directories) => {
     })
 }
 
-const buildTileMeta = (files) => {
+const buildTileMeta = (subdirectory, files) => {
     return files.map((filename, index) => {
         return {
             id: `${index}_${filename}`,
-            url: filename
+            url: `/assets/compressed/${subdirectory}/${filename}`,
         }
     })
 }
