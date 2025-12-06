@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import { buildTileMeta, loadAssets } from "../../../services/asset.service";
 
 import Tile from "../tile/tile";
-
 import './grid.css';
+
 
 const Grid = (props) => {
     const [tiles, setTiles] = useState([]);
     const loadImages = async () => {
-        const assets = await loadAssets(props.category, 0);
-
-        const tilesMeta = buildTileMeta(assets.files);
-        setTiles(tilesMeta);
+        return await loadAssets(props.directories[props.activeTab], 0)
     }
 
     useEffect(() => {
-        loadImages();
-    }, [])
+        loadImages().then((assets) => {
+            const tilesMeta = buildTileMeta(props.directories[props.activeTab], assets.files);
+            setTiles(tilesMeta);
+        })
+    }, [props.activeTab])
 
     return (
         <div className="grid" id="grid">
@@ -28,4 +29,7 @@ const Grid = (props) => {
     )
 }
 
-export default Grid;
+export default connect((state) => ({
+    activeTab: state.album.activeTab,
+    directories: state.album.directories
+}))(Grid);

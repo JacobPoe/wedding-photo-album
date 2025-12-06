@@ -12,15 +12,28 @@ import Modal from "../../layout/modal/modal";
 import Tab from "../../layout/tab/tab";
 import Grid from "../../layout/grid/grid";
 
+import { setActiveTab } from "../../../state/actions/set-active-tab";
+import { setAssetDirectories } from "../../../state/actions/set-asset-directories";
+
 const toast = config.text.home.toast;
 
 const Home = (props) => {
+    const [gridReady, setGridReady] = useState(false);
     const [tabs, setTabs] = useState([]);
-    const loadTabs = async () => {
-        const directories = await loadDirectories();
 
-        const tabsMeta = buildTabMeta(directories);
-        setTabs(tabsMeta);
+    const loadTabs = async () => {
+        setGridReady(false);
+        await loadDirectories().then((directories) => {
+            props.dispatch(setAssetDirectories(directories));
+
+            // Stretch goal: query url for a param which sets the default url at load
+            props.dispatch(setActiveTab(0));
+
+            const tabsMeta = buildTabMeta(directories);
+            setTabs(tabsMeta);
+
+            setGridReady(true);
+        });
     }
     useEffect(() => {
       loadTabs();
@@ -42,8 +55,8 @@ const Home = (props) => {
                             )
                         )}
                         <hr />
-                        { props.activeTab === props.tabIndex && (
-                            <Grid category={props.category} />
+                        { gridReady && (
+                            <Grid />
                         )}
                     </div>
                 </div>
@@ -59,6 +72,5 @@ const Home = (props) => {
 }
 
 export default connect((state) => ({
-    activeImage: state.activeImage,
-    activeTab: state.activeTab
+    activeImage: state.album.activeImage
 }))(Home);

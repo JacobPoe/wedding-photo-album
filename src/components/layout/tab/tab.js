@@ -15,5 +15,5 @@ const Tab = (props) => {
 }
 
 export default connect((state) => ({
-    activeTab: state.activeTab
+    activeTab: state.album.activeTab
 }))(Tab);

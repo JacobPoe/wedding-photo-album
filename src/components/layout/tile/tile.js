@@ -18,5 +18,5 @@ const Tile = (props) => {
 };
 
 export default connect((state) => ({
-    activeImage: state.activeImage
+    activeImage: state.album.activeImage
 }))(Tile);

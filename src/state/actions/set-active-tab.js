@@ -1,4 +1,4 @@
-export const SET_ACTIVE_TAB = "SET_ACTIVE_TAB";
+import { SET_ACTIVE_TAB } from "../reducers/album";
 
 export function setActiveTab(activeTab) {
     return {
