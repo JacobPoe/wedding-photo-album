@@ -33,7 +33,7 @@ app.get('/api/directories', async (req, res) => {
 // Pagination-supported listing
 app.get('/api/images', async (req, res) => {
     const offset = parseInt(req.query.offset || '0', 10);
-    const limit = parseInt(req.query.limit || '100', 10);
+    const limit = parseInt(req.query.limit || '1000', 10);
     const category = req.query.category;
 
     const allFiles = await fs.readdir(`${ASSET_PATH_COMPRESSED}/${category}`);
