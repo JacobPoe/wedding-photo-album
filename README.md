@@ -17,5 +17,5 @@ Special Thanks:
 - [Graystone Wine Cellar](https://www.graystonecolumbus.com/) for hosting our reception
 - https://cloudconvert.com for converting a JPG of our wedding cake to an ICO
 - https://www.portchecktool.com/ for validating my port forwarding was set up
-- https://www.noip.com for their resources on home network configuration
+- https://www.noip.com for their resources on home network configuration and for their free Dynamic DNS hosting
 - Everyone who celebrated with us!
