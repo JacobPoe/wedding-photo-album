@@ -64,7 +64,7 @@ const Home = (props) => {
                 <hr />
                 <span>📷: <a href="https://harryacosta.com/columbus-ohio-photography" target="_blank">Harry Acosta Photography</a></span>
             </div>
-            { props.activeImage && (
+            { props.activeImage && props.activeImage.name && (
                 <Modal />
             )}
         </>

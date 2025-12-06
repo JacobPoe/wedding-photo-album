@@ -23,7 +23,14 @@ const Grid = (props) => {
     return (
         <div className="grid" id="grid">
             {
-                tiles.map((image, key) => <Tile id={`tile_${key}`} key={key} tabIndex={key + 1} url={image.url} />)
+                tiles.map((image, key) =>
+                    <Tile
+                        id={`tile_${key}`}
+                        name={image.name}
+                        url={image.url}
+                        key={key}
+                        tabIndex={key + 1}
+                    />)
             }
         </div>
     )

@@ -4,8 +4,8 @@ import "./button.css";
 
 const Button = (props) => {
     const classes = ["btn"];
-    if (props.className.length) {
-        props.className?.forEach((className) => {
+    if (props.className?.length) {
+        props.className.forEach((className) => {
             classes.push(className);
         })
     }

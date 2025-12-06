@@ -23,6 +23,7 @@ const buildTileMeta = (subdirectory, files) => {
     return files.map((filename, index) => {
         return {
             id: `${index}_${filename}`,
+            name: filename,
             url: `/assets/compressed/${subdirectory}/${filename}`,
         }
     })
