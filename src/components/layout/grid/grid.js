@@ -10,7 +10,7 @@ import './grid.css';
 const Grid = (props) => {
     const [tiles, setTiles] = useState([]);
     const loadImages = async () => {
-        return await loadAssets(props.directories[props.activeTab], 0)
+        return await loadAssets(props.directories[props.activeTab])
     }
 
     useEffect(() => {
