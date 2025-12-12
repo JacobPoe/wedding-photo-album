@@ -20,15 +20,15 @@ const TOAST = config.text.home.toast;
 const BATCH_SIZE = config.navigation.batchSize
 
 const Home = (props) => {
+    props.dispatch(setBatchSize(BATCH_SIZE));
+
     const [gridReady, setGridReady] = useState(false);
     const [tabs, setTabs] = useState([]);
 
-    const load = async () => {
-        setGridReady(false);
+    const loadTabs = async () => {
+        // Stretch goal: query url for a param which sets the default url at load
         await loadDirectories().then((directories) => {
-            props.dispatch(setBatchSize(BATCH_SIZE));
             props.dispatch(setDirectories(directories));
-            // Stretch goal: query url for a param which sets the default url at load
             props.dispatch(setActiveTab({
                 index: 0,
                 category: directories[0]
@@ -38,7 +38,7 @@ const Home = (props) => {
         });
     }
     useEffect(() => {
-      load()
+      loadTabs()
           .then(() => {
             setGridReady(true);
          })

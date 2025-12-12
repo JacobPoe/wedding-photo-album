@@ -18,14 +18,29 @@ const Grid = (props) => {
                     ...props.activeTab
                 })
             )
-            const tilesMeta = buildTileMeta(props.activeTab.category, props.directories[props.activeTab.category]);
-            setTiles(tilesMeta);
         })
     }
 
     useEffect(() => {
-        loadTiles();
-    }, [props.activeTab])
+        const category = props.activeTab.category;
+        const dir = props.directories[category];
+
+        if (!dir || dir.length === 0) {
+            loadTiles();
+        }
+    }, [props.activeTab]);
+
+    useEffect(() => {
+        const category = props.activeTab.category;
+        const dir = props.directories[category];
+
+        if (dir && dir.length > 0) {
+            const tilesMeta = buildTileMeta(category, dir);
+            setTiles(tilesMeta);
+        } else {
+            setTiles([]);
+        }
+    }, [props.directories, props.activeTab]);
 
     return (
         <div className="grid" id="grid">
