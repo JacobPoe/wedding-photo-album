@@ -20,12 +20,12 @@ const TOAST = config.text.home.toast;
 const BATCH_SIZE = config.navigation.batchSize
 
 const Home = (props) => {
-    props.dispatch(setBatchSize(BATCH_SIZE));
 
     const [gridReady, setGridReady] = useState(false);
     const [tabs, setTabs] = useState([]);
 
     const loadTabs = async () => {
+        props.dispatch(setBatchSize(BATCH_SIZE));
         // Stretch goal: query url for a param which sets the default url at load
         await loadDirectories().then((directories) => {
             props.dispatch(setDirectories(directories));
