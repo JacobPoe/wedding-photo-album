@@ -7,10 +7,11 @@ import { createRoot } from "react-dom/client";
 import { configureStore } from "@reduxjs/toolkit";
 
 import { album } from "./state/reducers/album";
+import { navigation } from "./state/reducers/navigation";
 import logger from "./state/middleware/logger";
 
 const store = configureStore({
-    reducer: { album: album },
+    reducer: { album: album, navigation: navigation },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 })
 
