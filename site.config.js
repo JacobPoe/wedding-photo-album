@@ -12,6 +12,9 @@ const config = {
       },
       "toast": "Thank you to everyone who joined us on our special day! We're grateful for all your love and support as we begin this new chapter."
     }
+  },
+  "navigation": {
+    "batchSize": 25
   }
 }
 
