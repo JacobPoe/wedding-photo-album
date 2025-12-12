@@ -13,12 +13,6 @@ const loadDirectories = async () => {
     return response.json();
 }
 
-const buildTabMeta = (directories) => {
-    return directories.map((dir) => {
-        return dir.replace(/[_-]/g, ' ');
-    })
-}
-
 const buildTileMeta = (subdirectory, files) => {
     return files.map((filename, index) => {
         return {
@@ -29,4 +23,4 @@ const buildTileMeta = (subdirectory, files) => {
     })
 }
 
-export { buildTabMeta, buildTileMeta, loadAssets, loadDirectories };
+export { buildTileMeta, loadAssets, loadDirectories };
