@@ -1,16 +1,45 @@
 const config = {
-  "text": {
-    "index": {
-      "title": "The Poes ️"
+  text: {
+    index: {
+      title: 'The Poes'
     },
-    "home": {
-      "header": {
-        "title": "💒 Jake & Gabby!",
-        "theme": {
-          "label": "Toggle between light and dark mode."
-        }
+    home: {
+      footer: {
+        vendors: [
+          {
+            id: 'cake',
+            url: 'https://www.sauercakes.com/',
+            description: 'Wedding Cake',
+            linkText: 'Sauer Cakes',
+            emoji: '🎂'
+          },
+          {
+            id: 'church',
+            url: 'https://www.iccols.org/',
+            description: 'Nuptial Venue',
+            linkText: 'Immaculate Conception Catholic Church',
+            emoji: '⛪'
+          },
+          {
+            id: 'photography',
+            url: 'https://harryacosta.com/columbus-ohio-photography',
+            description: 'Professional Photography',
+            linkText: 'Harry Acosta Photography',
+            emoji: '📷'
+          },
+          {
+            id: 'reception',
+            url: 'https://www.graystonecolumbus.com/',
+            description: 'Reception Hall',
+            linkText: 'Graystone Wine Cellar',
+            emoji: '🍽️'
+          }
+        ]
       },
-      "toast": "Thank you to everyone who joined us on our special day! We're grateful for all your love and support as we begin this new chapter."
+      header: {
+        title: '💒 Jake & Gabby!'
+      },
+      toast: 'Thank you to everyone who joined us on our special day! We\'re grateful for all your love and support as we begin this new chapter.'
     }
   }
 }
