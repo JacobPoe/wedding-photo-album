@@ -98,6 +98,7 @@ const Grid = (props) => {
                         type="nav"
                         className={['button__nav', 'button__nav-prev', 'btn--secondary']}
                         text={'<'}
+                        disabled={props.activeTab.offset === 0}
                         onClickHandler={() => loadNewTiles('prev')}
                     />
                     <Button
@@ -106,6 +107,7 @@ const Grid = (props) => {
                         type="nav"
                         className={['button__nav', 'button__nav-next', 'btn--secondary']}
                         text={'>'}
+                        disabled={(props.activeTab.offset + 1) * props.batchSize >= props.directories[props.activeTab.category].length}
                         onClickHandler={() => loadNewTiles('next')}
                     />
                 </div>
