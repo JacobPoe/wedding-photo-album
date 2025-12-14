@@ -15,4 +15,9 @@
     > h1 {
         margin-top: 0;
     }
+
+    .header__home {
+        text-decoration: none;
+        color: var(--fg);
+    }
 }
