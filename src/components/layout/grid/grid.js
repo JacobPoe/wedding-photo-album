@@ -15,7 +15,7 @@ const Grid = (props) => {
     const gridSizeOptions = [25, 50, 100, 200, 'all']
     const [tiles, setTiles] = useState([]);
 
-    const loadTiles = async () => {
+    const fetchAssets = async () => {
         await loadAssets(props.activeTab.category)
             .then((res) => {
                 props.dispatch(setAssets({
@@ -41,7 +41,7 @@ const Grid = (props) => {
         const dir = props.directories[category];
 
         if (!dir || dir.length === 0) {
-            loadTiles();
+            fetchAssets();
         }
     }, [props.activeTab]);
 
