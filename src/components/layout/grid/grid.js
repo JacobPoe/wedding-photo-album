@@ -64,7 +64,12 @@ const Grid = (props) => {
 
     useEffect(() => {
         const category = props.activeTab.category;
-        const dir = props.directories[category];
+        const dir = props.directories[category]
+            .slice(
+                (props.activeTab.offset * props.batchSize),
+                (props.activeTab.offset * props.batchSize) + props.batchSize);
+
+        console.log('effect was used', category, dir)
 
         if (dir && dir.length > 0) {
             const tilesMeta = buildTileMeta(category, dir);
