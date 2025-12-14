@@ -9,6 +9,7 @@ Software:
 Environment Variables:
 - `ASSET_PATH_FULLSIZE`: Where on disk the folder of fullsize assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
 - `ASSET_PATH_COMPRESSED`: Where on disk the folder of compressed assets is saved. Used to serve the photos using webpack. Defaults to `/assets` if not set.
+- `ALBUM_MAILTO`: The email which should populate the mailto in the site footer.
 - `PORT`: Port the Express server should run on. Defaults to `3000`.
 
 Special Thanks: 
@@ -18,4 +19,5 @@ Special Thanks:
 - https://cloudconvert.com for converting a JPG of our wedding cake to an ICO
 - https://www.portchecktool.com/ for validating my port forwarding was set up
 - https://www.noip.com for their resources on home network configuration and for their free Dynamic DNS hosting
+- https://emojipedia.org/ for their ease of emoji
 - Everyone who celebrated with us!
