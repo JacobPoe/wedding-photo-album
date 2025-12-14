@@ -1,8 +1,3 @@
-const loadAsset = async (id) => {
-    const response = await fetch(`/api/assets?id=${id}`);
-    return response.json();
-}
-
 const loadAssets = async (category) => {
     const response = await fetch(`/api/images?category=${category}`);
     return response.json(); // { total, offset, limit, files }
