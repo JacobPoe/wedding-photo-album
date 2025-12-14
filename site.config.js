@@ -49,7 +49,10 @@ const config = {
           linkText: 'Sauer Cakes',
           emoji: '🎂'
         }
-      ]
+      ],
+      github: {
+        url: 'https://github.com/JacobPoe/wedding-photo-albumwwwww'
+      }
     }
   }
 }

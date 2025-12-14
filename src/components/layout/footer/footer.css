@@ -22,6 +22,10 @@
         margin-top: var(--space-6);
     }
 
+    .footer-section__links {
+
+    }
+
     .footer-section__vendors {
         .vendor-details {
             display: inline-grid;
