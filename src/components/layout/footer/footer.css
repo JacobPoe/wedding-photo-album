@@ -7,12 +7,17 @@
     border-top: 1px solid var(--accent);
 
     .footer-section {
+        display: inline-table;
         @media screen and (min-width: 0px) {
             width: 100%;
         }
         @media screen and (min-width: 768px) {
             width: 50%;
         }
+    }
+
+    .footer-section__bottom {
+        margin-top: var(--space-6);
     }
 
     .footer-section__vendors {
@@ -30,5 +35,9 @@
                 width: 100%;
             }
         }
+    }
+
+    .footer-section__wide {
+        width: 100%;
     }
 }
