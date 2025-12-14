@@ -25,6 +25,12 @@
     content: "x"
 }
 
+.btn[type="nav"] {
+    height: var(--grid-controls__height);
+    width: var(--grid-controls__width);
+    margin: auto var(--space-2);
+}
+
 .btn[type="tab"] {
     background-color: transparent;
     border-radius: var(--radius-md) var(--radius-md) 0 0;
@@ -42,16 +48,4 @@
 .btn[type="tab"]:hover {
     border: 1px solid var(--accent);
     background-color: transparent;
-}
-
-
-.btn--danger {
-    background: linear-gradient(180deg, #ef4444, color-mix(in oklab, #ef4444 85%, black));
-    border-color: color-mix(in oklab, #ef4444 60%, black);
-    color: #fff;
-}
-.btn--success {
-    background: linear-gradient(180deg, #22c55e, color-mix(in oklab, #22c55e 85%, black));
-    border-color: color-mix(in oklab, #22c55e 60%, black);
-    color: #fff;
 }
