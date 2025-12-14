@@ -77,7 +77,7 @@ const Grid = (props) => {
         } else {
             setTiles([]);
         }
-    }, [props.directories, props.activeTab]);
+    }, [props.directories, props.activeTab, props.batchSize]);
 
     return (
         <div className="grid" id="grid">
