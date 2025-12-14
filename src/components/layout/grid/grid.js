@@ -12,6 +12,7 @@ import Button from "../../controls/button/button";
 import Select from "../../controls/select/select";
 
 import './grid.css';
+import {setOffset} from "../../../state/actions/set-offset";
 
 const Grid = (props) => {
     const gridSizeOptions = [25, 50, 100, 200, 'all']
@@ -28,11 +29,18 @@ const Grid = (props) => {
         })
     }
 
+    const updateOffset = (offset) => {
+        props.dispatch(setOffset(offset))
+    }
+
     const loadNewTiles = (direction) => {
        paginate({
            direction: direction,
            batchSize: props.batchSize,
-           files: props.directories[props.activeTab.category]})
+           files: props.directories[props.activeTab.category],
+           offset: props.activeTab.offset,
+           updateOffset: updateOffset
+       })
     }
 
     const updateGridSize = (val) => {

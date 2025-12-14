@@ -12,7 +12,13 @@ export const navigation = (state, action) => {
         case SET_DISPLAY_URI:
             return { ...state, displayUri: action.uri };
         case SET_OFFSET:
-            return { ...state, offset: action.offset };
+            return {
+                ...state,
+                activeTab: {
+                    ...state.activeTab,
+                    offset: action.offset
+                }
+            };
         default:
             return { ...state };
     }
