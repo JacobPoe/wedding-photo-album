@@ -1,0 +1,5 @@
+select {
+    margin-left: var(--space-2);
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+}
