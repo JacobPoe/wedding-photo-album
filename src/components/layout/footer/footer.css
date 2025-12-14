@@ -1,0 +1,43 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 var(--space-6) var(--space-4);
+
+    border-top: 1px solid var(--accent);
+
+    .footer-section {
+        display: inline-table;
+        @media screen and (min-width: 0px) {
+            width: 100%;
+        }
+        @media screen and (min-width: 768px) {
+            width: 50%;
+        }
+    }
+
+    .footer-section__bottom {
+        margin-top: var(--space-6);
+    }
+
+    .footer-section__vendors {
+        .vendor-details {
+            display: inline-grid;
+            padding-right: var(--space-2);
+
+            @media screen and (min-width: 0px) {
+                width: 100%;
+            }
+            @media screen and (min-width: 480px) {
+                width: 50%;
+            }
+            * {
+                width: 100%;
+            }
+        }
+    }
+
+    .footer-section__wide {
+        width: 100%;
+    }
+}
