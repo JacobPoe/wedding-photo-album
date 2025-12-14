@@ -51,7 +51,7 @@ const config = {
         }
       ],
       github: {
-        url: 'https://github.com/JacobPoe/wedding-photo-albumwwwww'
+        url: 'https://github.com/JacobPoe/wedding-photo-album'
       }
     }
   }
