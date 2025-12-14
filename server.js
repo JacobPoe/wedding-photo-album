@@ -30,25 +30,18 @@ app.get('/api/directories', async (req, res) => {
     res.json(dirs);
 })
 
-// Pagination-supported listing
+// Fetch a list of all images in a category to populate state for pagination
 app.get('/api/images', async (req, res) => {
-    const offset = parseInt(req.query.offset || '0', 10);
-    const limit = parseInt(req.query.limit || '1000', 10);
     const category = req.query.category;
 
     const allFiles = await fs.readdir(`${ASSET_PATH_COMPRESSED}/${category}`);
-
     const imageFiles = allFiles.filter(f =>
         /\.(jpg|jpeg|png)$/i.test(f)
     );
 
-    const batch = imageFiles.slice(offset, offset + limit);
-
     res.json({
         total: imageFiles.length,
-        offset,
-        limit,
-        files: batch.map(filename => filename)
+        files: imageFiles.map(filename => filename)
     });
 });
 
