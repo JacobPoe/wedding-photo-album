@@ -32,7 +32,8 @@ const Home = (props) => {
             props.dispatch(setDirectories(directories));
             props.dispatch(setActiveTab({
                 index: 0,
-                category: directories[0]
+                category: directories[0],
+                offset: 0
             }));
 
             setTabs(directories);
