@@ -2,6 +2,15 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     padding: var(--space-2) var(--space-6);
+
+    .grid__controls {
+        margin-bottom: var(--space-5);
+
+        .grid__controls--nav {
+            margin-left: auto;
+        }
+    }
+
 }

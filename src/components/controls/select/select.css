@@ -1,5 +1,11 @@
 select {
-    margin-left: var(--space-2);
+    height: var(--grid-controls__height);
+    width: var(--grid-controls__width);
     padding: var(--space-1);
+    margin-left: var(--space-2);
     border-radius: var(--radius-sm);
+
+    background: linear-gradient(180deg, var(--muted), color-mix(in oklab, var(--muted) 85%, black));
+    border-color: color-mix(in oklab, var(--ring) 60%, black);
+    color: var(--accent-contrast);
 }
