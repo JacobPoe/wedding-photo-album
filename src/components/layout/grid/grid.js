@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { buildTileMeta, loadAssets } from "../../../services/asset.service";
+import { paginate } from "../../../services/pagination.service";
+
 import { setAssets } from "../../../state/actions/set-assets";
 import { setBatchSize } from "../../../state/actions/set-batch-size";
 
 import Tile from "../tile/tile";
+import Button from "../../controls/button/button";
 import Select from "../../controls/select/select";
 
 import './grid.css';
-import Button from "../../controls/button/button";
 
 const Grid = (props) => {
     const gridSizeOptions = [25, 50, 100, 200, 'all']
@@ -24,6 +26,13 @@ const Grid = (props) => {
                 })
             )
         })
+    }
+
+    const loadNewTiles = (direction) => {
+       paginate({
+           direction: direction,
+           batchSize: props.batchSize,
+           files: props.directories[props.activeTab.category]})
     }
 
     const updateGridSize = (val) => {
@@ -66,6 +75,9 @@ const Grid = (props) => {
                     opts={gridSizeOptions}
                     callbackFn={(e) => updateGridSize(e)}
                 />
+                <span className="text-centered">
+                    {(props.batchSize * props.activeTab.offset) + 1} - {(props.batchSize * props.activeTab.offset) + props.batchSize} of {props.directories[props.activeTab.category].length}
+                </span>
                 <div className={`grid__controls--nav`}>
                     <Button
                         id="prev"
@@ -73,6 +85,7 @@ const Grid = (props) => {
                         type="nav"
                         className={['button__nav', 'button__nav-prev', 'btn--secondary']}
                         text={'<'}
+                        onClickHandler={() => loadNewTiles('prev')}
                     />
                     <Button
                         id="next"
@@ -80,6 +93,7 @@ const Grid = (props) => {
                         type="nav"
                         className={['button__nav', 'button__nav-next', 'btn--secondary']}
                         text={'>'}
+                        onClickHandler={() => loadNewTiles('next')}
                     />
                 </div>
 

@@ -7,10 +7,6 @@
 
     .grid__controls {
         margin-bottom: var(--space-5);
-
-        .grid__controls--nav {
-            margin-left: auto;
-        }
     }
 
 }
