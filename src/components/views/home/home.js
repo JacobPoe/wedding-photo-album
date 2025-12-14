@@ -61,7 +61,6 @@ const Home = (props) => {
                                 }
                             )
                         )}
-                        {/* TODO: design a <Dropdown /> control to change the value of state.offset */}
                         <hr />
                         { gridReady && (
                             <Grid batchSize={BATCH_SIZE} />
