@@ -7,7 +7,15 @@ const config = {
       header: {
         title: '💒 Jake & Gabby!'
       },
-      toast: 'Thank you to everyone who joined us on our special day! We\'re grateful for all your love and support as we begin this new chapter.'
+      toast: 'Thank you to everyone who joined us on our special day! We\'re grateful for all your love and support as we begin this new chapter.',
+      footer: {
+        contact: {
+          label: 'Have a photo you\'d like to share?',
+          linkText: 'Email us',
+          linkFollowup: 'and we\'ll add it to our Fan Submissions tab!'
+        },
+        bottom: ['The Poes 🤵‍♂️👰‍♀️', 'Est. October 4th, 2025 💞']
+      }
     }
   },
   layout: {
