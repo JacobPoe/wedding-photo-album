@@ -9,7 +9,6 @@ import './footer.css';
 const Footer = () => {
     return (
         <>
-            <hr />
             <div className={`footer`}>
                 <div className={`footer-section footer-section__vendors`}>
                     <h3>Vendors</h3>
