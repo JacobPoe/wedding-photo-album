@@ -189,6 +189,7 @@ h5,
 h6 {
   color: var(--fg);
   font-weight: 600;
+  margin-bottom: var(--space-2);
 }
 
 label {

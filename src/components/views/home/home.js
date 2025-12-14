@@ -7,10 +7,11 @@ import "./home.css";
 import config from "../../../../site.config";
 import { buildTabMeta, loadDirectories } from "../../../services/asset.service";
 
+import Footer from "../../layout/footer/footer";
 import Header from "../header/header";
+import Grid from "../../layout/grid/grid";
 import Modal from "../../layout/modal/modal";
 import Tab from "../../layout/tab/tab";
-import Grid from "../../layout/grid/grid";
 
 import { setActiveTab } from "../../../state/actions/set-active-tab";
 import { setAssetDirectories } from "../../../state/actions/set-asset-directories";
@@ -60,9 +61,7 @@ const Home = (props) => {
                         )}
                     </div>
                 </div>
-                {/* TODO: make a real footer */}
-                <hr />
-                <span>📷: <a href="https://harryacosta.com/columbus-ohio-photography" target="_blank">Harry Acosta Photography</a></span>
+                <Footer />
             </div>
             { props.activeImage && props.activeImage.name && (
                 <Modal />

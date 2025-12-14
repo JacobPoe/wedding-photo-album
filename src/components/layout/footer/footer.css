@@ -1,0 +1,30 @@
+.footer {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+
+    .footer-section {
+        @media screen and (min-width: 0px) {
+            width: 100%;
+        }
+        @media screen and (min-width: 768px) {
+            width: 50%;
+        }
+    }
+
+    .footer-section__vendors {
+        .vendor-details {
+            display: inline-grid;
+            padding-right: var(--space-2);
+
+            @media screen and (min-width: 0px) {
+                width: 100%;
+            }
+            @media screen and (min-width: 480px) {
+                width: 50%;
+            }
+            * {
+                width: 100%;
+            }
+        }
+    }
+}
