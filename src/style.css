@@ -17,6 +17,9 @@
    Global Theme Tokens (Sass-ready via CSS variables)
    ========================================================================== */
 :root {
+  /* Font Sizes */
+  --font-small: 0.75rem;
+
   /* Radii */
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -196,4 +199,14 @@ label {
   color: var(--fg);
   display: block;
   margin-bottom: .5rem;
+}
+
+.text-centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-small {
+  font-size: var(--font-small);
 }
