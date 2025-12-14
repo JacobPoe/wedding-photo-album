@@ -65,6 +65,10 @@
   --accent-contrast: #00141c;
   --border: rgba(255,255,255,.15);
   --ring: rgba(14,165,233,.45);
+
+  /* Form controls */
+  --grid-controls__height: 35px;
+  --grid-controls__width: 55px;
 }
 
 .dark-mode {
@@ -177,6 +181,12 @@ input:focus { color: var(--fg)}
   background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 85%, black));
   color: var(--accent-contrast);
   border-color: color-mix(in oklab, var(--accent) 60%, black);
+}
+
+.btn--secondary {
+  background: linear-gradient(180deg, var(--muted), color-mix(in oklab, var(--muted) 85%, black));
+  border-color: color-mix(in oklab, var(--ring) 60%, black);
+  color: var(--accent-contrast);
 }
 
 /* Layout helpers */
