@@ -20,7 +20,12 @@ const Footer = () => {
                     <span>💌&nbsp;<a
                         href={`mailto:${albumMailto}`}>{contactText.linkText}</a>&nbsp;{contactText.linkFollowup}</span>
                     <h4>Code</h4>
-                    <span>🖥️ Curious about my code? Check it out on my&nbsp;<a href={githubUrl}>Github</a></span>
+                    <span>🖥️ Wanna read my code? Check it out on my&nbsp;<a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={githubUrl}>
+                            GitHub
+                    </a>.</span>
                 </div>
                 <div className={`footer-section footer-section__vendors`}>
                     <h3>Vendors</h3>
