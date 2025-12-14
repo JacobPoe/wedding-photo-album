@@ -5,6 +5,7 @@ import config from "../../../../site.config"
 const albumMailto = process.env.ALBUM_MAILTO || '';
 const bottomText = config.text.home.footer.bottom;
 const contactText = config.text.home.footer.contact;
+const githubUrl = config.layout.footer.github.url;
 const vendors = config.layout.footer.vendors;
 
 import './footer.css';
@@ -13,11 +14,13 @@ const Footer = () => {
     return (
         <>
             <div className={`footer`}>
-                <div className={`footer-section footer-section__contact`}>
+                <div className={`footer-section footer-section__links`}>
                     <h3>Thank You!</h3>
                     <h4>{contactText.label}</h4>
                     <span>💌&nbsp;<a
                         href={`mailto:${albumMailto}`}>{contactText.linkText}</a>&nbsp;{contactText.linkFollowup}</span>
+                    <h4>Code</h4>
+                    <span>🖥️ Curious about my code? Check it out on my&nbsp;<a href={githubUrl}>Github</a></span>
                 </div>
                 <div className={`footer-section footer-section__vendors`}>
                     <h3>Vendors</h3>
