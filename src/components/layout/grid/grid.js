@@ -6,7 +6,6 @@ import { buildTileMeta, loadAssets } from "../../../services/asset.service";
 import Tile from "../tile/tile";
 import './grid.css';
 
-
 const Grid = (props) => {
     const [tiles, setTiles] = useState([]);
     const loadImages = async () => {
