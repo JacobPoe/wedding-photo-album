@@ -5,7 +5,7 @@ import "../views-base.css";
 import "./home.css";
 
 import config from "../../../../site.config";
-import { buildTabMeta, loadDirectories } from "../../../services/asset.service";
+import { loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
 import Header from "../header/header";
@@ -14,30 +14,36 @@ import Modal from "../../layout/modal/modal";
 import Tab from "../../layout/tab/tab";
 
 import { setActiveTab } from "../../../state/actions/set-active-tab";
-import { setAssetDirectories } from "../../../state/actions/set-asset-directories";
+import { setDirectories } from "../../../state/actions/set-directories";
+import { setBatchSize } from "../../../state/actions/set-batch-size";
 
-const toast = config.text.home.toast;
+const TOAST = config.text.home.toast;
+const BATCH_SIZE = config.navigation.batchSize
 
 const Home = (props) => {
+
     const [gridReady, setGridReady] = useState(false);
     const [tabs, setTabs] = useState([]);
 
     const loadTabs = async () => {
-        setGridReady(false);
+        props.dispatch(setBatchSize(BATCH_SIZE));
+        // Stretch goal: query url for a param which sets the default url at load
         await loadDirectories().then((directories) => {
-            props.dispatch(setAssetDirectories(directories));
+            props.dispatch(setDirectories(directories));
+            props.dispatch(setActiveTab({
+                index: 0,
+                category: directories[0],
+                offset: 0
+            }));
 
-            // Stretch goal: query url for a param which sets the default url at load
-            props.dispatch(setActiveTab(0));
-
-            const tabsMeta = buildTabMeta(directories);
-            setTabs(tabsMeta);
-
-            setGridReady(true);
+            setTabs(directories);
         });
     }
     useEffect(() => {
-      loadTabs();
+      loadTabs()
+          .then(() => {
+            setGridReady(true);
+         })
     }, []);
 
     return (
@@ -47,7 +53,7 @@ const Home = (props) => {
                 <div className={`view view__home`}>
                     <div className={"view-container"}>
                         {/* stretch goal: design a carousel to live above the toast */}
-                        <p className="toast">{toast}</p>
+                        <p className="toast">{TOAST}</p>
                         { tabs.length && (
                             tabs.map((tab, index) =>
                                 {
@@ -57,7 +63,7 @@ const Home = (props) => {
                         )}
                         <hr />
                         { gridReady && (
-                            <Grid />
+                            <Grid batchSize={BATCH_SIZE} />
                         )}
                     </div>
                 </div>

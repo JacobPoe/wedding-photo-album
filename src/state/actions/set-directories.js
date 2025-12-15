@@ -1,6 +1,6 @@
 import { SET_DIRECTORIES } from "../reducers/album";
 
-export function setAssetDirectories(directories) {
+export function setDirectories(directories) {
     return {
         type: SET_DIRECTORIES,
         directories

@@ -21,7 +21,7 @@ const Button = (props) => {
                 onClick={props.onClickHandler}
                 className={classes.join(" ")}
                 type={props.type ? props.type : 'button'}
-                >
+                disabled={props?.disabled || false}>
                 <span>{props.text}</span>
             </button>
         </>

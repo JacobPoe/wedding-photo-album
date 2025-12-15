@@ -1,4 +1,4 @@
-import { SET_ACTIVE_TAB } from "../reducers/album";
+import { SET_ACTIVE_TAB } from "../reducers/navigation";
 
 export function setActiveTab(activeTab) {
     return {

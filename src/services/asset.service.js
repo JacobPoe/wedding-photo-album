@@ -1,8 +1,3 @@
-const loadAsset = async (id) => {
-    const response = await fetch(`/api/assets?id=${id}`);
-    return response.json();
-}
-
 const loadAssets = async (category) => {
     const response = await fetch(`/api/images?category=${category}`);
     return response.json(); // { total, offset, limit, files }
@@ -11,12 +6,6 @@ const loadAssets = async (category) => {
 const loadDirectories = async () => {
     const response = await fetch(`/api/directories`);
     return response.json();
-}
-
-const buildTabMeta = (directories) => {
-    return directories.map((dir) => {
-        return dir.replace(/[_-]/g, ' ');
-    })
 }
 
 const buildTileMeta = (subdirectory, files) => {
@@ -29,4 +18,4 @@ const buildTileMeta = (subdirectory, files) => {
     })
 }
 
-export { buildTabMeta, buildTileMeta, loadAssets, loadDirectories };
+export { buildTileMeta, loadAssets, loadDirectories };

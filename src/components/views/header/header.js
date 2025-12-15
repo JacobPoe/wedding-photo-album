@@ -9,7 +9,7 @@ const title = config.text.home.header.title;
 const Header = (props) => {
     return (
         <div className={`header`}>
-            <h1>{title}</h1>
+            <h1><a className={`header__home`} href="#">{title}</a></h1>
         </div>
         )
     };

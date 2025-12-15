@@ -6,20 +6,24 @@ import Button from "../../controls/button/button";
 
 const Tab = (props) => {
     const changeTab = () => {
-        props.dispatch(setActiveTab(props.index))
+        props.dispatch(setActiveTab({
+            index: props.index,
+            category: props.category,
+            offset: props.activeTab.offset
+        }))
     }
 
     return (
         <Button
             type="tab"
-            id={props.category.split(' ').join('')}
-            text={props.category}
-            className={props.index === props.activeTab ? ['active'] : []}
+            id={props.category.replace(/[-_]/g, '')}
+            text={props.category.replace(/[-_]/g,' ')}
+            className={props.index === props.activeTab.index ? ['active'] : []}
             onClickHandler={changeTab}
         />
     )
 }
 
 export default connect((state) => ({
-    activeTab: state.album.activeTab
+    activeTab: state.navigation.activeTab
 }))(Tab);

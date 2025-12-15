@@ -54,6 +54,9 @@ const config = {
         url: 'https://github.com/JacobPoe/wedding-photo-album'
       }
     }
+  },
+  "navigation": {
+    "batchSize": 25
   }
 }
 
