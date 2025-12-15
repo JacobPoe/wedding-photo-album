@@ -64,12 +64,16 @@ const Grid = (props) => {
 
     useEffect(() => {
         const category = props.activeTab.category;
-        const dir = props.directories[category]
-            .slice(
-                (props.activeTab.offset * props.batchSize),
-                (props.activeTab.offset * props.batchSize) + props.batchSize);
+        const start = props.activeTab.offset * props.batchSize;
 
-        console.log('effect was used', category, dir)
+        let stop;
+        if (props.batchSize === -1) {
+            stop = props.directories[category].length;
+        } else {
+            stop = Number(start) + Number(props.batchSize);
+        }
+
+        const dir = props.directories[category].slice(start, stop);
 
         if (dir && dir.length > 0) {
             const tilesMeta = buildTileMeta(category, dir);
@@ -89,7 +93,7 @@ const Grid = (props) => {
                     callbackFn={(e) => updateGridSize(e)}
                 />
                 <span className="text-centered">
-                    {(props.batchSize * props.activeTab.offset) + 1} - {(props.batchSize * props.activeTab.offset) + props.batchSize} of {props.directories[props.activeTab.category].length}
+                    {(props.batchSize * props.activeTab.offset) + 1} - {Number(props.batchSize * props.activeTab.offset) + Number(props.batchSize)} of {props.directories[props.activeTab.category].length}
                 </span>
                 <div className={`grid__controls--nav`}>
                     <Button
