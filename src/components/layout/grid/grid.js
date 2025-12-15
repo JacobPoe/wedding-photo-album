@@ -16,6 +16,7 @@ import {setOffset} from "../../../state/actions/set-offset";
 
 const Grid = (props) => {
     const gridSizeOptions = [25, 50, 100, 200, 'all']
+    const [range, setRange] = useState({ start: 0, end: 0 });
     const [tiles, setTiles] = useState([]);
 
     const fetchAssets = async () => {
@@ -65,16 +66,14 @@ const Grid = (props) => {
     useEffect(() => {
         const category = props.activeTab.category;
         const start = props.activeTab.offset * props.batchSize;
+        const end =
+            props.batchSize === -1 ||
+            Number(start) + Number(props.batchSize) > props.directories[category].length
+                ? props.directories[category].length
+                : Number(start) + Number(props.batchSize);
+        setRange({start: start, end: end})
 
-        let stop;
-        if (props.batchSize === -1) {
-            stop = props.directories[category].length;
-        } else {
-            stop = Number(start) + Number(props.batchSize);
-        }
-
-        const dir = props.directories[category].slice(start, stop);
-
+        const dir = props.directories[category].slice(start, end);
         if (dir && dir.length > 0) {
             const tilesMeta = buildTileMeta(category, dir);
             setTiles(tilesMeta);
@@ -93,7 +92,7 @@ const Grid = (props) => {
                     callbackFn={(e) => updateGridSize(e)}
                 />
                 <span className="text-centered">
-                    {(props.batchSize * props.activeTab.offset) + 1} - {Number(props.batchSize * props.activeTab.offset) + Number(props.batchSize)} of {props.directories[props.activeTab.category].length}
+                    {range.start + 1} - {range.end} of {props.directories[props.activeTab.category].length}
                 </span>
                 <div className={`grid__controls--nav`}>
                     <Button
