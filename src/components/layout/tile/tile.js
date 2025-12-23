@@ -10,8 +10,7 @@ const Tile = (props) => {
         props.dispatch(
             setActiveImage({
                 id: props.id,
-                name: props.name,
-                url: props.url
+                name: props.name
             })
         );
     }
