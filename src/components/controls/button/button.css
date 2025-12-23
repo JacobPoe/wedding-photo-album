@@ -56,7 +56,7 @@
     background-color: transparent;
 }
 
-.btn[disabled] {
+.btn:not([disabled]) {
     color: var(--fg);
     background-color: var(--accent);
 }
