@@ -13,7 +13,7 @@ import './footer.css';
 const Footer = () => {
     return (
         <>
-            <div className={`footer`}>
+            <footer className={`footer`}>
                 <div className={`footer-section footer-section__links`}>
                     <h3>Thank You!</h3>
                     <h4>{contactText.label}</h4>
@@ -41,7 +41,7 @@ const Footer = () => {
                         <div className={`text-small text-centered`} key={index}>{text}</div>
                     )}
                 </div>
-            </div>
+            </footer>
         </>
     )
 }
