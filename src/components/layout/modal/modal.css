@@ -14,11 +14,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    width: 100%;
     padding: var(--space-8);
+    text-align: center;
 
     img {
         border-radius: var(--radius-md);
         max-height: 85vh; max-width: 85vw;
     }
+}
+
+.modal-image {
+    margin: 0 auto var(--space-6) auto;
 }
