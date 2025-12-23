@@ -30,6 +30,10 @@
     width: var(--grid-controls__width);
     margin: auto var(--space-2);
 }
+.btn[type="nav"]:not([disabled]) {
+    color: var(--fg);
+    background-color: var(--accent);
+}
 .btn[type="nav"]:first-of-type {
     margin-left: 0;
 }
@@ -56,10 +60,6 @@
     background-color: transparent;
 }
 
-.btn:not([disabled]) {
-    color: var(--fg);
-    background-color: var(--accent);
-}
 .btn[disabled]:hover {
     cursor: not-allowed;
 }
