@@ -103,6 +103,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: var(--accent);
+}
+
 img, svg, video, canvas { display: block; max-width: 100%; }
 button, textarea, select { font: inherit; color: inherit; }
 
