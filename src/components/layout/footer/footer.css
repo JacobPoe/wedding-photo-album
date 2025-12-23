@@ -1,11 +1,10 @@
 .footer {
-    position: absolute;
-
+    position: relative;
     bottom: 0;
     width: 100%;
     padding: 0 var(--space-4) var(--space-4);
 
-    background-color: var(--bg-elev);
+    background-color: var(--bg);
     border-top: 1px solid var(--accent);
 
     .footer-section {
