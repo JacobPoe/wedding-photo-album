@@ -21,10 +21,7 @@
 
     img {
         border-radius: var(--radius-md);
+        margin: var(--space-10) auto;
         max-height: 85vh; max-width: 85vw;
     }
-}
-
-.modal-image {
-    margin: 0 auto var(--space-6) auto;
 }
