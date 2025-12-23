@@ -17,8 +17,8 @@
     border-width: 1px;
     border-color: var(--muted);
     border-radius: var(--radius-sm);
-    right: 0;
-    top: 0;
+    right: 2px;
+    top: 2px;
     transform: translate(-100%, 100%);
 }
 .btn[type="close"]::after {

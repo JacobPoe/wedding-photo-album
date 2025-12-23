@@ -20,9 +20,7 @@ const Modal = (props) => {
         <>
             <div className="modal-backdrop" onClick={() => closeModal()}></div>
             <div className="modal-content">
-                <div className="modal-close">
-                    <Button id={`modal-close__${props.activeImage.id}`} type="close" onClickHandler={closeModal} />
-                </div>
+                <Button id={`modal-close__${props.activeImage.id}`} type="close" onClickHandler={closeModal} />
                 <img className={"modal-image"} src={props.activeImage.url} alt="Modal" />
                 📷 Click <a href={source} target="_blank">here</a> to see the full-resolution image.
             </div>
