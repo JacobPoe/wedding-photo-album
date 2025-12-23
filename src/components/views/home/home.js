@@ -8,20 +8,20 @@ import config from "../../../../site.config";
 import { loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
-import Header from "../header/header";
+import Header from "../../layout/header/header";
 import Grid from "../../layout/grid/grid";
 import Modal from "../../layout/modal/modal";
-import Tab from "../../layout/tab/tab";
+import Tab from "../../layout/tabs/tab/tab";
 
 import { setActiveTab } from "../../../state/actions/set-active-tab";
 import { setDirectories } from "../../../state/actions/set-directories";
 import { setBatchSize } from "../../../state/actions/set-batch-size";
+import TabMenu from "../../layout/tabs/tabmenu/tabmenu";
 
 const TOAST = config.text.home.toast;
 const BATCH_SIZE = config.navigation.batchSize
 
 const Home = (props) => {
-
     const [gridReady, setGridReady] = useState(false);
     const [tabs, setTabs] = useState([]);
 
@@ -39,6 +39,7 @@ const Home = (props) => {
             setTabs(directories);
         });
     }
+
     useEffect(() => {
       loadTabs()
           .then(() => {
@@ -50,23 +51,14 @@ const Home = (props) => {
         <>
             <div className="dark-mode">
                 <Header />
-                <div className={`view view__home`}>
-                    <div className={"view-container"}>
-                        {/* stretch goal: design a carousel to live above the toast */}
-                        <p className="toast">{TOAST}</p>
-                        { tabs.length && (
-                            tabs.map((tab, index) =>
-                                {
-                                    return (<Tab category={tab} index={index} key={index} />);
-                                }
-                            )
-                        )}
-                        <hr />
-                        { gridReady && (
-                            <Grid batchSize={BATCH_SIZE} />
-                        )}
-                    </div>
-                </div>
+                <main className={`view view__home`}>
+                    {/* stretch goal: design a carousel to live above the toast */}
+                    <p className="toast">{TOAST}</p>
+                    <TabMenu tabs={tabs} />
+                    { gridReady && (
+                        <Grid batchSize={BATCH_SIZE} />
+                    )}
+                </main>
                 <Footer />
             </div>
             { props.activeImage && props.activeImage.name && (
