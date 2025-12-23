@@ -51,7 +51,7 @@ const Home = (props) => {
         <>
             <div className="dark-mode">
                 <Header />
-                <main className={`view view__home`}>
+                <main className={`view view-container view__home`}>
                     {/* stretch goal: design a carousel to live above the toast */}
                     <p className="toast">{TOAST}</p>
                     <TabMenu tabs={tabs} />
