@@ -174,7 +174,7 @@ input:focus { color: var(--fg)}
   user-select: none;
   transition: background-color .15s ease, transform .06s ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:not([disabled]):hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
 .btn--primary {
