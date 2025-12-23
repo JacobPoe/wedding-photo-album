@@ -30,6 +30,12 @@
     width: var(--grid-controls__width);
     margin: auto var(--space-2);
 }
+.btn[type="nav"]:first-of-type {
+    margin-left: 0;
+}
+.btn[type="nav"]:last-of-type {
+    margin-right: 0;
+}
 
 .btn[type="tab"] {
     background-color: transparent;
@@ -48,4 +54,12 @@
 .btn[type="tab"]:hover {
     border: 1px solid var(--accent);
     background-color: transparent;
+}
+
+.btn[disabled] {
+    color: var(--fg);
+    background-color: var(--accent);
+}
+.btn[disabled]:hover {
+    cursor: not-allowed;
 }
