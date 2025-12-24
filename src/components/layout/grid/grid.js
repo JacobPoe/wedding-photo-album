@@ -31,14 +31,12 @@ const Grid = (props) => {
     }
 
     const updateOffset = (offset) => {
-        props.dispatch(setOffset(offset))
+        props.dispatch(setOffset(0))
     }
 
     const loadNewTiles = (direction) => {
        paginate({
            direction: direction,
-           batchSize: props.batchSize,
-           files: props.directories[props.activeTab.category],
            offset: props.activeTab.offset,
            updateOffset: updateOffset
        })
