@@ -22,7 +22,7 @@ const Modal = (props) => {
             <div className="modal-content">
                 <Button id={`modal-close__${props.activeImage.id}`} type="close" onClickHandler={closeModal} />
                 <img className={"modal-image"} src={props.activeImage.url} alt="Modal" />
-                📷 Click <a href={source} target="_blank">here</a> to see the full-resolution image.
+                📷 Click <a href={source} target="_blank">here</a> for the full-resolution image.
             </div>
         </>
     )
