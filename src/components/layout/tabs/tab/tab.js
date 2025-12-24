@@ -9,7 +9,7 @@ const Tab = (props) => {
         props.dispatch(setActiveTab({
             index: props.index,
             category: props.category,
-            offset: props.activeTab.offset
+            offset: 0
         }))
     }
 
