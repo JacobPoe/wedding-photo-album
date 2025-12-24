@@ -6,6 +6,7 @@ import Button from "../../controls/button/button";
 
 import './modal.css';
 
+const ASSET_PATH_FULLSIZE = process.env.ASSET_PATH_FULLSIZE;
 const Modal = (props) => {
     const [source, setSource] = useState('');
     const closeModal = () => {
@@ -13,7 +14,7 @@ const Modal = (props) => {
     }
 
     useEffect(() => {
-        setSource(`/assets/fullsize/${props.activeImage.name}`);
+        setSource(`${ASSET_PATH_FULLSIZE}/${props.activeImage.name}`);
     }, [])
 
     return (
