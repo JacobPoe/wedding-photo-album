@@ -15,7 +15,7 @@ import './grid.css';
 import {setOffset} from "../../../state/actions/set-offset";
 
 const Grid = (props) => {
-    const gridSizeOptions = [25, 50, 100, 200, 'all']
+    const gridSizeOptions = [25, 50, 100, 200]
     const [range, setRange] = useState({ start: 0, end: 0 });
     const [tiles, setTiles] = useState([]);
 
