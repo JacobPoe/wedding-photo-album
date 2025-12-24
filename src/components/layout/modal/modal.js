@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import { setActiveImage } from "../../../state/actions/set-active-image";
 import Button from "../../controls/button/button";
 
+
+import config from "../../../../site.config";
 import './modal.css';
 
-const ASSET_PATH_FULLSIZE = process.env.ASSET_PATH_FULLSIZE;
+const FULLSIZE_ASSET_URL = config.assets.fullsize.url;
 const Modal = (props) => {
     const [source, setSource] = useState('');
     const closeModal = () => {
@@ -14,7 +16,7 @@ const Modal = (props) => {
     }
 
     useEffect(() => {
-        setSource(`${ASSET_PATH_FULLSIZE}/${props.activeImage.name}`);
+        setSource(`${FULLSIZE_ASSET_URL}/${props.activeImage.name}`);
     }, [])
 
     return (
