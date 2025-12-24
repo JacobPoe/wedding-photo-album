@@ -19,7 +19,7 @@
     }
 
     .footer-section__bottom {
-        margin-top: var(--space-6);
+        margin-top: 100%;
     }
 
     .footer-section__vendors {
