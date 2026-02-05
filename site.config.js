@@ -55,8 +55,16 @@ const config = {
       }
     }
   },
-  "navigation": {
+  navigation: {
     "batchSize": 25
+  },
+  assets: {
+    compressed: {
+      url: '/assets/compressed'
+    },
+    fullsize: {
+      url: '/assets/fullsize'
+    }
   }
 }
 

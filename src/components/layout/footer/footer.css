@@ -1,11 +1,11 @@
 .footer {
     position: relative;
-
     bottom: 0;
     width: 100%;
-    padding: 0 var(--space-6) var(--space-4);
+    padding: 0 var(--space-4) var(--space-4);
+    margin-top: var(--space-10);
 
-    background-color: var(--bg-elev);
+    background-color: var(--bg);
     border-top: 1px solid var(--accent);
 
     .footer-section {
@@ -22,10 +22,6 @@
         margin-top: var(--space-6);
     }
 
-    .footer-section__links {
-
-    }
-
     .footer-section__vendors {
         .vendor-details {
             display: inline-grid;
@@ -38,7 +34,7 @@
                 width: 50%;
             }
             * {
-                width: 100%;
+                width: fit-content;
             }
         }
     }

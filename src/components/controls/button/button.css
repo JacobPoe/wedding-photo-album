@@ -8,20 +8,22 @@
 .btn[type="close"] {
     gap: 0;
     padding: 0.25rem;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    color: var(--bg);
+    color: var(--muted);
 
-    font-weight: 700;
-    border-width: 2px;
-    border-color: var(--bg);
+    font-weight: 600;
+    border-width: 1px;
+    border-color: var(--muted);
     border-radius: var(--radius-sm);
-    right: 0;
-    top: 0;
+    right: 2px;
+    top: 2px;
     transform: translate(-100%, 100%);
 }
 .btn[type="close"]::after {
+    position: relative;
+    top: -2px;
     content: "x"
 }
 
@@ -29,6 +31,16 @@
     height: var(--grid-controls__height);
     width: var(--grid-controls__width);
     margin: auto var(--space-2);
+}
+.btn[type="nav"]:not([disabled]) {
+    color: var(--fg);
+    background-color: var(--accent);
+}
+.btn[type="nav"]:first-of-type {
+    margin-left: 0;
+}
+.btn[type="nav"]:last-of-type {
+    margin-right: 0;
 }
 
 .btn[type="tab"] {
@@ -48,4 +60,8 @@
 .btn[type="tab"]:hover {
     border: 1px solid var(--accent);
     background-color: transparent;
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
 }

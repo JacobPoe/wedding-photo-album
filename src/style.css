@@ -103,6 +103,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: var(--accent);
+}
+
 img, svg, video, canvas { display: block; max-width: 100%; }
 button, textarea, select { font: inherit; color: inherit; }
 
@@ -174,8 +178,6 @@ input:focus { color: var(--fg)}
   user-select: none;
   transition: background-color .15s ease, transform .06s ease;
 }
-.btn:hover { transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
 
 .btn--primary {
   background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 85%, black));
