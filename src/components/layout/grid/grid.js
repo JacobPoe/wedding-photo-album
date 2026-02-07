@@ -5,10 +5,11 @@ import { paginate } from "jake-compoenents/dist/services/pagination.service";
 import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
 import { setOffset } from "jake-compoenents/dist/state/actions/set-offset";
 
+import Tile from "jake-compoenents/dist/components/layout/tile/tile";
+
 import { buildTileMeta, loadAssets } from "../../../services/asset.service";
 import { setAssets } from "../../../state/actions/set-assets";
 
-import Tile from "../tile/tile";
 import Button from "../../controls/button/button";
 import Select from "../../controls/select/select";
 
