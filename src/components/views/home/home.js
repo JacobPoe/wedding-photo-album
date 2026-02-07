@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
+import { setActiveTab } from "jake-compoenents/dist/state/actions/set-active-tab";
+import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
+import { setDirectories } from "jake-compoenents/dist/state/actions/set-directories";
+
+import Modal from "jake-compoenents/dist/components/layout/modal/modal"
+
 import "../views-base.css";
 import "./home.css";
 
@@ -9,13 +15,7 @@ import { loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
 import Header from "../../layout/header/header";
-
-import { setActiveTab } from "jake-compoenents/dist/state/actions/set-active-tab";
-import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
-import { setDirectories } from "jake-compoenents/dist/state/actions/set-directories";
-
 import Grid from "../../layout/grid/grid";
-import Modal from "../../layout/modal/modal";
 import TabMenu from "../../layout/tabs/tabmenu/tabmenu";
 
 const TOAST = config.text.home.toast;
