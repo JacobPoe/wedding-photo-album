@@ -5,20 +5,19 @@ import { setActiveTab } from "jake-compoenents/dist/state/actions/set-active-tab
 import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
 import { setDirectories } from "jake-compoenents/dist/state/actions/set-directories";
 
+import Grid from "jake-compoenents/dist/components/layout/grid/grid"
 import Modal from "jake-compoenents/dist/components/layout/modal/modal"
 import TabMenu from "jake-compoenents/dist/components/layout/tabs/tabmenu/tabmenu"
 
 import "../views-base.css";
 import "./home.css";
 
-import config from "../../../../site.config";
-import { loadDirectories } from "../../../services/asset.service";
+import { buildTileMeta, loadAssets, loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
 import Header from "../../layout/header/header";
-import Grid from "../../layout/grid/grid";
-import TabMenu from "../../layout/tabs/tabmenu/tabmenu";
 
+import config from "../../../../site.config";
 const TOAST = config.text.home.toast;
 const BATCH_SIZE = config.navigation.batchSize
 
@@ -57,7 +56,10 @@ const Home = (props) => {
                     <p className="toast">{TOAST}</p>
                     <TabMenu tabs={tabs} />
                     { gridReady && (
-                        <Grid batchSize={BATCH_SIZE} />
+                        <Grid
+                            batchSize={BATCH_SIZE}
+                            buildTileMetaCallback={buildTileMeta}
+                            fetchContentCallback={loadAssets} />
                     )}
                 </main>
                 <Footer />
@@ -70,5 +72,6 @@ const Home = (props) => {
 }
 
 export default connect((state) => ({
-    activeImage: state.album.activeImage
+    activeImage: state.album.activeImage,
+    activeTab: state.navigation.activeTab,
 }))(Home);
