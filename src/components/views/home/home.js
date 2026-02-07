@@ -6,6 +6,7 @@ import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size
 import { setDirectories } from "jake-compoenents/dist/state/actions/set-directories";
 
 import Modal from "jake-compoenents/dist/components/layout/modal/modal"
+import TabMenu from "jake-compoenents/dist/components/layout/tabs/tabmenu/tabmenu"
 
 import "../views-base.css";
 import "./home.css";
