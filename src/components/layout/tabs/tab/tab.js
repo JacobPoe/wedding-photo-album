@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { setActiveTab } from "../../../../state/actions/set-active-tab";
+import { setActiveTab } from "jake-compoenents/dist/state/actions/set-active-tab";
 import Button from "../../../controls/button/button";
 
 const Tab = (props) => {

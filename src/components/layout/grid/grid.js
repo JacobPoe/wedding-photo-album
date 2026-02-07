@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import { buildTileMeta, loadAssets } from "../../../services/asset.service";
-import { paginate } from "../../../services/pagination.service";
+import { paginate } from "jake-compoenents/dist/services/pagination.service";
+import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
+import { setOffset } from "jake-compoenents/dist/state/actions/set-offset";
 
+import { buildTileMeta, loadAssets } from "../../../services/asset.service";
 import { setAssets } from "../../../state/actions/set-assets";
-import { setBatchSize } from "../../../state/actions/set-batch-size";
 
 import Tile from "../tile/tile";
 import Button from "../../controls/button/button";
 import Select from "../../controls/select/select";
 
 import './grid.css';
-import {setOffset} from "../../../state/actions/set-offset";
 
 const Grid = (props) => {
     const gridSizeOptions = [25, 50, 100, 200]

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { setActiveImage } from "../../../state/actions/set-active-image";
+import { setActiveImage } from "jake-compoenents/dist/state/actions/set-active-image";
 
 import './tile.css';
 

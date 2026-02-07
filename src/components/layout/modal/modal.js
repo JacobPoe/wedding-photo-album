@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import { setActiveImage } from "../../../state/actions/set-active-image";
+import { setActiveImage } from "jake-compoenents/dist/state/actions/set-active-image";
 import Button from "../../controls/button/button";
-
 
 import config from "../../../../site.config";
 import './modal.css';

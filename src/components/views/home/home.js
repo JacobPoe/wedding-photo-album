@@ -9,13 +9,13 @@ import { loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
 import Header from "../../layout/header/header";
+
+import { setActiveTab } from "jake-compoenents/dist/state/actions/set-active-tab";
+import { setBatchSize } from "jake-compoenents/dist/state/actions/set-batch-size";
+import { setDirectories } from "jake-compoenents/dist/state/actions/set-directories";
+
 import Grid from "../../layout/grid/grid";
 import Modal from "../../layout/modal/modal";
-import Tab from "../../layout/tabs/tab/tab";
-
-import { setActiveTab } from "../../../state/actions/set-active-tab";
-import { setDirectories } from "../../../state/actions/set-directories";
-import { setBatchSize } from "../../../state/actions/set-batch-size";
 import TabMenu from "../../layout/tabs/tabmenu/tabmenu";
 
 const TOAST = config.text.home.toast;
