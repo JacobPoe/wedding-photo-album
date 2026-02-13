@@ -12,14 +12,16 @@ import TabMenu from "jake-compoenents/dist/components/layout/tabs/tabmenu/tabmen
 import "../views-base.css";
 import "./home.css";
 
-import { buildTileMeta, loadAssets, loadDirectories } from "../../../services/asset.service";
+import { loadAssets, loadDirectories } from "../../../services/asset.service";
 
 import Footer from "../../layout/footer/footer";
 import Header from "../../layout/header/header";
 
 import config from "../../../../site.config";
 const TOAST = config.text.home.toast;
-const BATCH_SIZE = config.navigation.batchSize
+const BATCH_SIZE = config.navigation.batchSize;
+const COMPRESSED_URL = config.assets.compressed.url;
+const FULLSIZE_URL = config.assets.fullsize.url;
 
 const Home = (props) => {
     const [gridReady, setGridReady] = useState(false);
@@ -58,7 +60,8 @@ const Home = (props) => {
                     { gridReady && (
                         <Grid
                             batchSize={BATCH_SIZE}
-                            buildTileMetaCallback={buildTileMeta}
+                            compressedUrl={COMPRESSED_URL}
+                            fullsizeUrl={FULLSIZE_URL}
                             fetchContentCallback={loadAssets} />
                     )}
                 </main>
