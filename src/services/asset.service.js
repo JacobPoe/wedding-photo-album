@@ -8,14 +8,4 @@ const loadDirectories = async () => {
     return response.json();
 }
 
-const buildTileMeta = (subdirectory, files) => {
-    return files.map((filename, index) => {
-        return {
-            id: `${index}_${filename}`,
-            name: filename,
-            url: `/assets/compressed/${subdirectory}/${filename}`,
-        }
-    })
-}
-
-export { buildTileMeta, loadAssets, loadDirectories };
+export { loadAssets, loadDirectories };
