@@ -6,10 +6,12 @@ const https = require('https');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const config = require('./webpack.config.js');
+const dotenv = require('dotenv');
 
 const app = express();
 const compiler = webpack(config);
 
+dotenv.config();
 const ASSET_PATH_COMPRESSED = process.env.ASSET_PATH_COMPRESSED || path.join(__dirname, 'assets');
 const ASSET_PATH_FULLSIZE = process.env.ASSET_PATH_FULLSIZE || path.join(__dirname, 'assets');
 const PORT = process.env.PORT || 3000;
